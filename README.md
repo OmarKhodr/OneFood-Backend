@@ -1,6 +1,6 @@
 # OneFood-Backend
 
-Backend NodeJS server for OneFood
+Backend NodeJS server for OneFood.
 
 ## Project Configuration
 
