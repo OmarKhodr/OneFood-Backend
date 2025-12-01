@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Backend NodeJS server for OneFood",
   "scripts": {
-    "dev": "tsx --watch --env-file .env.development src/index.ts",
-    "dev:staging": "tsx --watch --env-file .env.staging src/index.ts",
-    "dev:prod": "tsx --watch --env-file .env.production src/index.ts",
+    "dev": "tsx --watch --env-file .env src/index.ts",
+    "dev:staging": "tsx --watch --env-file .env src/index.ts",
+    "dev:prod": "tsx --watch --env-file .env src/index.ts",
     "start": "node --env-file .env dist/index.js",
     "build": "tsc -p tsconfig.build.json",
     "test": "vitest",
@@ -32,20 +32,25 @@
   },
   "homepage": "https://github.com/OmarKhodr/OneFood-Backend#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.44.7",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@tsconfig/node24": "^24.0.3",
     "@types/express": "^5.0.5",
     "@types/node": "^24.10.1",
+    "@types/pg": "^8.15.6",
     "@vitest/eslint-plugin": "^1.5.0",
+    "drizzle-kit": "^0.31.7",
     "eslint": "^9.39.1",
     "eslint-plugin-perfectionist": "^4.15.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "^3.6.2",
-    "tsx": "^4.20.6",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.48.0",
     "vitest": "^4.0.14"

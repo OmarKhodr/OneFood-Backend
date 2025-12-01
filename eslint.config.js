@@ -23,6 +23,12 @@ export default defineConfig(
   },
   perfectionist.configs["recommended-natural"],
   {
+    files: ["**/*.ts"],
+    rules: {
+      "perfectionist/sort-objects": "off",
+    },
+  },
+  {
     files: ["**/*.test.ts", "**/*.spec.ts"],
     plugins: {
       vitest,
