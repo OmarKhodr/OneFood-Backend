@@ -1,7 +1,8 @@
-import { drizzle } from "drizzle-orm/node-postgres";
 import { eq } from "drizzle-orm";
-import { restaurants } from "./db/schema.js";
+import { drizzle } from "drizzle-orm/node-postgres";
 import express from "express";
+
+import { restaurants } from "./db/schema.js";
 
 const app = express();
 
@@ -14,19 +15,6 @@ const db = drizzle(process.env.DATABASE_URL);
 app.get("/", (req, res) => {
   res.send("Hello, World! Potato");
   console.log("Response sent");
-});
-
-app.post("/restaurants", express.json(), async (req, res) => {
-  const { name, address, description, imageUrl } = req.body;
-  if (!name || !address || !description || !imageUrl) {
-    res.status(400).send({ error: "Missing required fields" });
-    return;
-  }
-  const [newRestaurant] = await db
-    .insert(restaurants)
-    .values({ name, address, description, imageUrl })
-    .returning();
-  res.status(201).send(newRestaurant);
 });
 
 app.get("/restaurants", async (req, res) => {
