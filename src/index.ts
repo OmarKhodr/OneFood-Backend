@@ -1,16 +1,12 @@
+import { initDatabase } from "#db/init.js";
 import { eq } from "drizzle-orm";
-import { drizzle } from "drizzle-orm/node-postgres";
 import express from "express";
 
 import { restaurants } from "./db/schema.js";
 
 const app = express();
 
-if (!process.env.DATABASE_URL) {
-  throw new Error("DATABASE_URL is not defined in environment variables");
-}
-
-const db = drizzle(process.env.DATABASE_URL);
+const db = initDatabase();
 
 app.get("/", (req, res) => {
   res.send("Hello, World! Potato");
