@@ -43,4 +43,6 @@ export async function scrapeDelierooData() {
   );
   console.log("Fetched robots.txt:");
   console.log(robotsTxt);
+  const restaurants = unwrapOrThrow(await fetchDeliverooRestaurantData());
+  console.log("Fetched restaurant data:", restaurants);
 }
