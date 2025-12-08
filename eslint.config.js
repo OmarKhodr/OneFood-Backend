@@ -26,6 +26,7 @@ export default defineConfig(
     files: ["**/*.ts"],
     rules: {
       "perfectionist/sort-objects": "off",
+      "perfectionist/sort-modules": "off",
     },
   },
   {
