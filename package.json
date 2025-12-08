@@ -6,6 +6,7 @@
     "dev": "tsx --watch --env-file .env src/index.ts",
     "dev:staging": "tsx --watch --env-file .env src/index.ts",
     "dev:prod": "tsx --watch --env-file .env src/index.ts",
+    "job:restaurant_data": "tsx --env-file .env src/jobs/restaurant_data/entrypoint.ts",
     "start": "node --env-file .env dist/index.js",
     "build": "tsc -p tsconfig.build.json",
     "test": "vitest",
